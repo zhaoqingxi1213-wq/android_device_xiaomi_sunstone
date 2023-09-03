@@ -1,0 +1,22 @@
+/system         ext4      system                                     flags=display=system;logical;slotselect,noatime,nosuid,nodev,first_stage_mount
+/system         erofs     system                                     flags=display=system;logical;slotselect,noatime,nosuid,nodev,first_stage_mount
+/system_ext     ext4      system_ext                                 flags=display=system_ext;logical;slotselect,noatime,nosuid,nodev,first_stage_mount
+/system_ext     erofs     system_ext                                 flags=display=system_ext;logical;slotselect,noatime,nosuid,nodev,first_stage_mount
+/product        ext4      product                                    flags=display=product;logical;slotselect,noatime,nosuid,nodev,first_stage_mount
+/product        erofs     product                                    flags=display=product;logical;slotselect,noatime,nosuid,nodev,first_stage_mount
+/vendor         ext4      vendor                                     flags=display=vendor;logical;slotselect,noatime,nosuid,nodev,first_stage_mount
+/vendor         erofs     vendor                                     flags=display=vendor;logical;slotselect,noatime,nosuid,nodev,first_stage_mount
+/odm            ext4      odm                                        flags=display=odm;logical;slotselect,noatime,nosuid,nodev,first_stage_mount
+/odm            erofs     odm                                        flags=display=odm;logical;slotselect,noatime,nosuid,nodev,first_stage_mount
+/metadata       ext4      /dev/block/bootdevice/by-name/metadata     flags=display=metadata,noatime,nosuid,nodev,first_stage_mount
+/data           f2fs      /dev/block/bootdevice/by-name/userdata     flags=display=data,noatime,nosuid,nodev,discard,inlinecrypt,reserve_root=32768,resgi
+d=1065,fsync_mode=nobarrier    latemount,wait,check,formattable,fileencrypti
+on=aes-256-xts:aes-256-cts:v2+inlinecrypt_optimized+wrappedkey_v0,keydirecto
+ry=/metadata/vold/metadata_encryption,metadata_encryption=aes-256-xts:wrappe
+dkey_v0,quota,reservedsize=128M,checkpoint=fs
+/sdcard         vfat      /dev/block/mmcblk1p1                       flags=display=sdcard
+/boot           emmc      /dev/block/bootdevice/by-name/boot         flags=display=boot
+/misc           emmc      /dev/block/bootdevice/by-name/misc         flags=display=misc
+/cache          ext4      /dev/block/platform/soc/4804000.ufshc/by-name/rescue       flags=display=cache
+/usb-otg	vaft     /devices/platform/soc/*.ssusb/*.dwc3/xhci-hcd.*.auto*	  flags=display=usbotg
+/sdcard1	vaft	/devices/platform/soc/4784000.sdhci/mmc_host*	flags=display=sdcard1
